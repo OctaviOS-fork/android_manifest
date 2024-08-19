@@ -13,13 +13,21 @@ repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen
 or to save bandwith and space 
 
 ```bash
-repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen --depth=1
+repo init -u https://github.com/OctaviOS-fork/android_manifest.git -b thirteen --depth=1 --git-lfs
+```
+or
+```bash
+repo init --depth=1 --no-repo-verify -u https://github.com/OctaviOS-fork/android_manifest.git -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
 ```
 
 Then to sync up:
 
 ```
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+```
+or
+```
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune --retry-fetches=5 -j$(nproc --all)
 ```
 
 ---------------------------------------------------------------------------------------
@@ -31,7 +39,7 @@ From root directory of Project, perform following commands in terminal
 ```bash
 $ . build/envsetup.sh
 $ lunch octavi_$device-userdebug
-$ brunch <device_codename>
+$ mka bacon -j$(nproc --all)
 ```
 
 ---------------------------------------------------------------------------------------
@@ -45,5 +53,5 @@ $ brunch <device_codename>
 ---------------------------------------------------------------------------------------
 
 ### Links to official groups/channels
-- [**Discussion Group**](https://t.me/OctaviOS_Chat)
-- [**Announcements Channel**](https://t.me/octavi_os)
+- [**Discussion Group**](https://t.me/ArataXDummy)
+- [**Announcements Channel**](https://t.me/mirrorlinkbyvinz)
